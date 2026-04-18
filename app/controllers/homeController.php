@@ -9,7 +9,10 @@ class HomeController extends Controller
     public function index()
     {
         $this->render('home', [
-            'title' => 'Accueil'
+            'title' => 'Accueil - Sonia B',
+            'metaDescription' => 'Portfolio de Sonia B, intégratrice web et développeuse spécialisée en accessibilité, SEO et interfaces modernes.',
+            'currentUrl' => 'http://localhost/SONIAB/public/',
+            'ogImage' => '/assets/img/og-default.jpg'
         ]);
     }
 }

@@ -1,6 +1,5 @@
 # SONIAB
-My personnal training website
- — Developer Portfolio Website
+My personnal training website — Developer Portfolio Website
 
 ## Overview
 
@@ -33,45 +32,47 @@ Additional focus areas:
 
 ## Architecture
 
-The project follows a simplified MVC structure:
+The project follows a lightweight custom MVC architecture designed for scalability and maintainability.
+
 SONIAB/  
 │  
 ├── app/  
-│   ├── controllers/  
-│   ├── core/  
-│   ├── models/  
-│   └──  views/  
-│       ├── layouts/  
-│       ├── pages/  
-│       └── partials/  
+│  ├── controllers/ # Application logic (controllers)  
+│  ├── models/ # Database interaction  
+│  ├── views/ # UI layer  
+│  │  ├── layouts/ # Global templates  
+│  │  ├── pages/ # Page views  
+│  │  └── partials/ # Reusable components  
+│  └── core/ # Core system (Router, Controller base, etc.)  
 │  
-├── config/  
+├── config/ # Configuration files  
 │  
-├── public/  
-│   ├── assets/  
-│   │   ├── css/  
-│   │   ├── icons/  
-│   │   ├── img/  
-│   │   └── js/  
-│   │  
-│   ├── uploads/  
-│   ├── .htaccess  
-│   └── index.php  
+├── public/ # Public entry point  
+│  ├── assets/ # CSS, JS, images  
+│  ├── index.php # Front controller  
+│  └── .htaccess # URL rewriting  
 │  
-├── storage/  
-│   ├── cache/  
-│   └── logs/  
+├── storage/ # Logs and cache  
 │  
-├── .env  
+├── .env # Environment variables (not versioned)  
 ├── .gitignore  
 └── README.md  
 
 Key principles:
 
-- separation of concerns
-- single entry point (`index.php`)
-- clean URL routing
-- centralized configuration
+- Single entry point (`public/index.php`)
+- Custom routing system (via `.htaccess`)
+- MVC separation of concerns
+- Secure handling of environment variables
+- Scalable and maintainable structure
+
+---
+
+## Security
+
+- Sensitive data is stored in a `.env` file (not committed)
+- Only the `/public` directory is accessible from the browser
+- Database connection uses PDO with exception handling
 
 ---
 
@@ -87,7 +88,7 @@ Key principles:
 Planned features:
 
 - Dynamic project pages
-- Blog section
+- (Blog section)
 - Contact form with validation
 - Dynamic sitemap generation
 - Structured data for search engines and AI systems
@@ -106,27 +107,16 @@ This project aims to demonstrate:
 
 ---
 
-## Installation
-
-Clone the repository:
-git clone https://github.com/SoniaB78/SONIAB.git
-
-Place the project in your local server directory (e.g. XAMPP `htdocs`).
-
-Access the site via:
-http://localhost/SONIAB/public <== NOT INLINE YET
-
----
-
 ## Roadmap
 
 - [ ] Implement Router system
-- [ ] Create base Controller class
-- [ ] Implement MVC rendering system
-- [ ] Setup database connection
+- [x] Create base Controller class
+- [x] Implement MVC rendering system
+- [x] Setup database connection
 - [ ] Add project portfolio module
 - [ ] Implement accessibility improvements
 - [ ] Generate dynamic sitemap
+- [ ] Improve SEO & structured data
 
 ---
 
