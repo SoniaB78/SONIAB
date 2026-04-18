@@ -34,37 +34,37 @@ Additional focus areas:
 ## Architecture
 
 The project follows a simplified MVC structure:
-SONIAB/
-│
-├── app/
-│   ├── controllers/
-│   ├── core/
-│   ├── models/
-│   └──  views/
-│       ├── layouts/
-│       ├── pages/
-│       └── partials/
-│
-├── config/
-│
-├── public/
-│   ├── assets/
-│   │   ├── css/
-│   │   ├── icons/
-│   │   ├── img/
-│   │   └── js/
-│   │
-│   ├── uploads/
-│   ├── .htaccess
-│   └── index.php
-│
-├── storage/
-│   ├── cache/
-│   └── logs/
-│
-├── .env
-├── .gitignore
-└── README.md
+SONIAB/  
+│  
+├── app/  
+│   ├── controllers/  
+│   ├── core/  
+│   ├── models/  
+│   └──  views/  
+│       ├── layouts/  
+│       ├── pages/  
+│       └── partials/  
+│  
+├── config/  
+│  
+├── public/  
+│   ├── assets/  
+│   │   ├── css/  
+│   │   ├── icons/  
+│   │   ├── img/  
+│   │   └── js/  
+│   │  
+│   ├── uploads/  
+│   ├── .htaccess  
+│   └── index.php  
+│  
+├── storage/  
+│   ├── cache/  
+│   └── logs/  
+│  
+├── .env  
+├── .gitignore  
+└── README.md  
 
 Key principles:
 
