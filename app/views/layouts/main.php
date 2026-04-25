@@ -34,10 +34,18 @@
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="/">Accueil</a>
-    </nav>
+<header class="header">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">Sonia.dev</div>
+
+        <nav>
+            <a href="#tarifs">Tarifs</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button id="themeToggle" class="btn btn-light">🌙</button>
+    </div>
 </header>
 
 <main>
@@ -48,5 +56,6 @@
     <p>© Sonia</p>
 </footer>
 
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('/assets/img/bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #000;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.6);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* SECTIONS */
+.section {
+    padding: 100px 0;
+}
+
+/* CARD */
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+/* DARK MODE */
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+body.dark .header {
+    background: rgba(0,0,0,0.8);
+}
+
+body.dark .hero::before {
+    background: rgba(0,0,0,0.6);
+}
+
+body.dark .card {
+    background: #1e1e1e;
+}

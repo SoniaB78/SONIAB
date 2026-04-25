@@ -6,7 +6,7 @@ class Router
 {
     private array $routes = [];
 
-    public function get(string $uri, string $action): void
+    public function get(string $uri, string $action): void // On stocke toutes tes routes dans un tableau
     {
         $this->routes[] = [
             'method' => 'GET',
@@ -15,7 +15,7 @@ class Router
         ];
     }
 
-    public function dispatch(string $requestUri, string $requestMethod): void
+    public function dispatch(string $requestUri, string $requestMethod): void // C’est la fonction qui : reçoit l’URL actuelle cherche une route correspondante
     {
         foreach ($this->routes as $route) {
 

@@ -109,10 +109,12 @@ This project aims to demonstrate:
 
 ## Roadmap
 
-- [ ] Implement Router system
+- [x] Implement Router system
 - [x] Create base Controller class
 - [x] Implement MVC rendering system
 - [x] Setup database connection
+- [x] Build MVP one-page layout (hero, pricing, timeline, contact)
+- [x] Implement light/dark mode
 - [ ] Add project portfolio module
 - [ ] Implement accessibility improvements
 - [ ] Generate dynamic sitemap
