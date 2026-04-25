@@ -109,18 +109,84 @@ This project aims to demonstrate:
 
 ## Roadmap
 
+### Architecture & Core
 - [x] Implement Router system
 - [x] Create base Controller class
 - [x] Implement MVC rendering system
-- [x] Setup database connection
-- [x] Build MVP one-page layout (hero, pricing, timeline, contact)
-- [x] Implement light/dark mode
-- [ ] Add project portfolio module
-- [ ] Implement accessibility improvements
-- [ ] Generate dynamic sitemap
-- [ ] Improve SEO & structured data
+- [x] Implement custom autoload (PSR-4 inspired)
+- [ ] Improve Router (dynamic params, 404 handling)
+- [ ] Add error handling system
 
 ---
+
+### Security
+- [x] Use PDO with exception handling
+- [x] Store sensitive data in `.env`
+- [x] Escape output data (`htmlspecialchars`)
+- [ ] Implement CSRF protection (contact form)
+- [ ] Validate and sanitize all user inputs
+- [ ] Disable directory listing & secure `.htaccess`
+
+---
+
+### Database (BDD)
+- [x] Setup MySQL database
+- [x] Create base EntityRepository (PDO connection)
+- [x] Implement ParcoursRepository
+- [x] Fetch dynamic data (parcours)
+- [ ] Create ProjectRepository (optional)
+- [ ] Add data normalization (relations if needed)
+
+---
+
+### Content (Features)
+- [x] Build MVP one-page layout
+- [x] Dynamic parcours section
+- [ ] Implement pricing table (accessible)
+- [ ] Add project portfolio module (dynamic) (optional)
+- [ ] Add contact form (backend handling)
+- [ ] Add basic admin editing via code
+
+---
+
+### Accessibility (WCAG / RGAA)
+- [x] Semantic HTML structure (header, main, nav)
+- [x] Implement skip link
+- [x] Add labels to form inputs
+- [ ] Improve keyboard navigation
+- [ ] Ensure color contrast compliance
+- [ ] Add ARIA attributes where needed
+- [ ] Test with screen readers
+
+---
+
+### SEO & AI SEO
+- [x] Dynamic meta tags (title, description)
+- [x] Open Graph integration
+- [ ] Structured data (JSON-LD)
+- [ ] Generate dynamic sitemap.xml
+- [ ] Add robots.txt
+- [ ] Optimize heading structure (H1 → Hn)
+- [ ] Improve content for AI readability (semantic clarity)
+
+---
+
+### Graphism (UI/UX)
+- [x] Basic layout structure
+- [ ] Implement light/dark mode
+- [ ] Improve hero section (visual impact)
+- [ ] Design timeline (parcours)
+- [ ] Add modern UI (cards, shadows, spacing)
+- [ ] Add color theme system (user selectable)
+
+---
+
+### Responsive Design
+- [x] Use Bootstrap grid
+- [ ] Optimize mobile navigation
+- [ ] Improve spacing and typography on mobile
+- [ ] Test on multiple screen sizes
+- [ ] Optimize images and performance
 
 ## Author
 

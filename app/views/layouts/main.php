@@ -30,15 +30,17 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../public/assets/css/style.css">
 </head>
 <body>
 
-<header class="header">
+<a href="#main-content" class="skip-link">Aller au contenu</a>
+
+<header class="header" role="banner">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="logo">Sonia.dev</div>
 
-        <nav>
+        <nav aria-label="Navigation principale">
             <a href="#tarifs">Tarifs</a>
             <a href="#parcours">Parcours</a>
             <a href="#contact">Contact</a>
@@ -48,10 +50,10 @@
     </div>
 </header>
 
-<main>
+<main id="main-content" role="main">
     <?= $content ?>
 </main>
-
+ 
 <footer>
     <p>© Sonia</p>
 </footer>
