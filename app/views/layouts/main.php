@@ -45,6 +45,13 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <div class="theme-switcher" role="group" aria-label="Choix de la couleur principale">
+        <button class="color-btn" data-theme="blue" style="background:#40adb7" aria-label="Choisir la couleur bleu"></button>
+        <button class="color-btn" data-theme="green" style="background:#c4f454" aria-label="Choisir la couleur vert"></button>
+        <button class="color-btn" data-theme="purple" style="background:#7651c5" aria-label="Choisir la couleur violet"></button>
+        <button class="color-btn" data-theme="pink" style="background:#fa167d" aria-label="Choisir la couleur rose"></button>
+    </div>
+
     <button id="themeToggle"
         class="btn btn-light"
         aria-label="Changer le thème"

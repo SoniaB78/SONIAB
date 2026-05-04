@@ -174,6 +174,7 @@ This project aims to demonstrate:
 ### Graphism (UI/UX)
 - [x] Basic layout structure
 - [x] Implement dark mode using CSS variables
+- [x] Add user-selectable color theme system
 - [x] Persist user theme preference (localStorage)
 - [ ] Improve hero section (visual impact)
 - [ ] Design timeline (parcours)

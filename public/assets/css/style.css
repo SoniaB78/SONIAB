@@ -85,6 +85,19 @@ header .logo {
 	height: 100%;
 }
 
+.theme-switcher {
+    display: flex;
+    gap: 8px;
+}
+
+.color-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
 /* -------------- HERO -------------- */
 .hero {
     height: 100vh;
