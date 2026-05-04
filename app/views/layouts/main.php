@@ -37,7 +37,7 @@
 <a href="#main-content" class="skip-link">Aller au contenu</a>
 
 <header class="headercontainer d-flex justify-content-between align-items-center" role="banner">
-    <img src="../public/assets/img/SB-blue.png" alt="" class="logo">
+    <img src="../public/assets/img/SB-blue.png" alt="" id="siteLogo">
 
     <nav aria-label="Navigation principale">
         <a href="#tarifs">Tarifs</a>
@@ -52,12 +52,7 @@
         <button class="color-btn" data-theme="pink" style="background:#fa167d" aria-label="Choisir la couleur rose"></button>
     </div>
 
-    <button id="themeToggle"
-        class="btn btn-light"
-        aria-label="Changer le thème"
-        aria-pressed="false">
-    🌙
-    </button>
+    <button id="themeToggle" class="btn btn-light" aria-label="Changer le thème" aria-pressed="false"> 🌙 </button>
 </header>
 
 <main id="main-content" role="main">

@@ -1,54 +1,85 @@
-const toggleBtn = document.getElementById('themeToggle');
+// ========================== INITIALISATION
 
-// Charger préférence utilisateur
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-}
 
-toggleBtn.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark');
+// On attend que le DOM soit chargé
+document.addEventListener('DOMContentLoaded', () => {
 
-    toggleBtn.setAttribute('aria-pressed', isDark);
+    // ========================== ELEMENTS DOM
+    const toggleBtn = document.getElementById('themeToggle');
+    const colorButtons = document.querySelectorAll('.color-btn');
+    const logo = document.getElementById('siteLogo');
 
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    // ========================== CONSTANTES
+    const THEMES = ['blue', 'green', 'purple', 'pink'];
 
-    // Sauvegarde
-    if (document.body.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
+    // ========================== FONCTION : UPDATE LOGO
+    function updateLogo(theme) {
+        if (!logo) return;
+
+        // ⚠️ Chemin absolu (important avec ton routing)
+        logo.src = `../public/assets/img/SB-${theme}.png`;
     }
-});
 
-const colorButtons = document.querySelectorAll('.color-btn');
+    // ========================== DARK MODE INIT
+    const savedDarkMode = localStorage.getItem('theme');
 
-// Charger la couleur sauvegardée
-const savedTheme = localStorage.getItem('color-theme');
+    if (savedDarkMode === 'dark') {
+        document.body.classList.add('dark');
+        if (toggleBtn) toggleBtn.setAttribute('aria-pressed', 'true');
+    }
 
-if (savedTheme) {
-    document.body.classList.add(`theme-${savedTheme}`);
-}
+    // ========================== DARK MODE CLICK
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
 
-// Click utilisateur
-colorButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+            const isDark = document.body.classList.toggle('dark');
 
-        const theme = btn.dataset.theme;
+            // Accessibilité
+            toggleBtn.setAttribute('aria-pressed', isDark);
 
-        // Reset anciennes classes
-        document.body.classList.remove(
-            'theme-green',
-            'theme-purple',
-            'theme-blue',
-            'theme-pink'
-        );
+            // Sauvegarde
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
 
-        // Ajouter la nouvelle
-        document.body.classList.add(`theme-${theme}`);
+    // ========================== COLOR THEME INIT
+    let savedColorTheme = localStorage.getItem('color-theme');
 
-        // Sauvegarder
-        localStorage.setItem('color-theme', theme);
+    // Si aucun thème sauvegardé → défaut = blue
+    if (!savedColorTheme) {
+        savedColorTheme = 'blue';
+    }
+
+    // Appliquer le thème
+    document.body.classList.add(`theme-${savedColorTheme}`);
+    updateLogo(savedColorTheme);
+
+    // ========================== COLOR THEME CLICK
+    colorButtons.forEach(btn => {
+
+        btn.addEventListener('click', () => {
+
+            const theme = btn.dataset.theme;
+
+            // Supprimer anciens thèmes
+            THEMES.forEach(t => {
+                document.body.classList.remove(`theme-${t}`);
+            });
+
+            // Ajouter nouveau thème
+            document.body.classList.add(`theme-${theme}`);
+
+            // Sauvegarder
+            localStorage.setItem('color-theme', theme);
+
+            // Update logo
+            updateLogo(theme);
+
+            // Accessibilité (aria-pressed)
+            colorButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+            btn.setAttribute('aria-pressed', 'true');
+        });
+
     });
-});
 
-btn.setAttribute('aria-pressed', 'true');
+});

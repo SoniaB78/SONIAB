@@ -81,8 +81,9 @@ header nav a {
 	color: var(--text-color);
 }
 
-header .logo {
+header #siteLogo {
 	height: 100%;
+    transition: opacity 0.3s ease;
 }
 
 .theme-switcher {
@@ -98,6 +99,10 @@ header .logo {
     cursor: pointer;
 }
 
+.color-btn:focus {
+    outline: 2px solid black;
+}
+
 /* -------------- HERO -------------- */
 .hero {
     height: 100vh;
@@ -107,7 +112,7 @@ header .logo {
     align-items: center;
     justify-content: center;
     position: relative;
-    color: #000;
+    color: var(--text-color);
 }
 
 .hero::before {
@@ -146,7 +151,7 @@ header .logo {
 	content: '';
 	position: absolute;
 	height: 100%;
-	border: 1px solid #058a83;
+	border: 1px solid var(--primary-color);
 	right: 40px;
 	top: 0;
 }
@@ -169,8 +174,8 @@ header .logo {
 	
 .timeline__item {
 	padding: 1rem;
-	border: 2px solid #3cbab4;
-	border-image: linear-gradient(to right, #a3faf6 0%, #058a83 100%);
+	border: 2px solid var(--primary-color);
+	border-image: linear-gradient(to right, var(--primary-color) 10%, var(--primary-color) 100%);
 	border-image-slice: 1;
 	position: relative;
 	margin: 1rem 3rem 1rem 1rem;
@@ -186,7 +191,7 @@ header .logo {
 	right: -10px;
 	top: calc(50% - 5px);
 	border-style: solid;
-	border-color: #a3faf6 #3cbab4 transparent transparent;
+	border-color: var(--primary-color) var(--primary-color) transparent transparent;
 	border-width: 10px;
 	transform: rotate(45deg);
 }
@@ -199,7 +204,7 @@ header .logo {
 	.timeline__item:nth-of-type(2n) {
 		float: right;
 		margin: 1rem;
-		border-image: linear-gradient(to right, #3cbab4 0%, #a3faf6 100%);
+		border-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 100%);
 		border-image-slice: 1;
 	}
 	.timeline__item:nth-of-type(2n):before {
@@ -214,8 +219,8 @@ header .logo {
 	max-width: 150px;
 	margin: 0 48px 0 auto;
 	font-size: 1.8rem;
-	background-color: #212529;
-	color: #3cbab4;
+	background-color: var(--bg-color);
+	color: var(--primary-color)
 	line-height: 1;
 	border-image: none;
 	padding: 0.6rem 1rem 0.6rem 1rem;
