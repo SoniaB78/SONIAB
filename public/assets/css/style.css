@@ -1,14 +1,54 @@
+:root { 
+	/* Colors */
+	--bg-color: #ffffff;
+	--text-color: #1a102e;
+	--primary-color: #40adb7; /* bleu par défaut*/
+
+	/* Surfaces */
+	--card-bg: #f5f5f5;
+	--header-bg: rgba(255, 255, 255, 0.9);
+	--overlay-color: rgba(255, 255, 255, 0.6);
+
+	/* UI */
+	--border-radius: 10px;
+	--transition: 0.3s ease;
+}
+
+body.dark { 
+    --bg-color: #1a102e;
+    --text-color: #ffffff;
+
+    --card-bg: #1a102e;
+    --header-bg: #1a102e;
+    --overlay-color: #1a102ed8;
+}
+
+body.theme-green {
+    --primary-color: #c4f454;
+}
+
+body.theme-purple {
+    --primary-color: #7651c5;
+}
+
+body.theme-pink {
+    --primary-color: #fa167d;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-}
+	background: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
 
-/* ACCESSIBILIY */
+}
+/* -------------- ACCESSIBILIY -------------- */
 .skip-link {
     position: absolute;
     top: -40px;
     left: 10px;
-    background: black;
+    background: var(--bg-color);
     color: white;
     padding: 8px;
     z-index: 1000;
@@ -18,26 +58,38 @@ body {
     top: 10px;
 }
 
-/* HEADER */
-.header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(255,255,255,0.9);
+/* -------------- HEADER -------------- */
+header {
+    background: var(--header-bg);
     backdrop-filter: blur(10px);
+    transition: var(--transition);
+	position: fixed;
+    width: 100%;
+	height: 80px;
+    top: 0;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 1em 3em;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 15px 0px var( --primary-color);
+	-webkit-box-shadow: 0px 0px 15px 0px var( --primary-color);
+	-moz-box-shadow: 0px 0px 15px 0px var( --primary-color);
 }
 
-.header nav a {
+header nav a {
     margin: 0 10px;
     text-decoration: none;
+	color: var(--text-color);
 }
 
-/* HERO */
+header .logo {
+	height: 100%;
+}
+
+/* -------------- HERO -------------- */
 .hero {
     height: 100vh;
-    background: url('/assets/img/bg.jpg') center/cover no-repeat;
+    /*background: url('/assets/img/bg.jpg') center/cover no-repeat;*/
+	background: var(--overlay-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +101,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255,255,255,0.6);
+    background: var(--bg-color);
 }
 
 .hero .container {
@@ -57,14 +109,19 @@ body {
     z-index: 2;
 }
 
-/* SECTIONS */
+.hero .btn-primary {
+    background: var(--primary-color);
+    border: none;
+}
+
+/* -------------- SECTIONS -------------- */
 .section {
     padding: 100px 0;
 }
 
-/* TABLE PRICES */
+/* -------------- TABLE PRICES -------------- */
 
-/* TIMELINE PARCOURS */
+/* -------------- TIMELINE PARCOURS -------------- */
 .timeline {
 	position: relative;
 	padding: 1rem;
@@ -153,7 +210,7 @@ body {
 
 .timeline__item--year:hover {
 	color: #a3faf6;
-	transition-duration: 0.5s;
+	transition-duration: var(--transition);
 }
 
 .timeline__item--year:before {

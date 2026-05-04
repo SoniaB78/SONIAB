@@ -1,12 +1,21 @@
-const toggle = document.createElement("button");
-toggle.innerText = "Dark mode";
-toggle.classList.add("btn", "btn-secondary");
-document.body.prepend(toggle);
+const toggleBtn = document.getElementById('themeToggle');
 
-toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-});
+// Charger préférence utilisateur
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+}
 
-document.getElementById('themeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+toggleBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark');
+
+    toggleBtn.setAttribute('aria-pressed', isDark);
+
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    // Sauvegarde
+    if (document.body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
 });
