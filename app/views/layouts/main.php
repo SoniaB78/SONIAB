@@ -34,41 +34,88 @@
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">Aller au contenu</a>
+    <a href="#main-content" class="skip-link">Aller au contenu</a>
 
-<header class="headercontainer d-flex justify-content-between align-items-center" role="banner">
-    <img src="../public/assets/img/SB-blue.png" alt="" id="siteLogo">
+    <header class="headercontainer d-flex justify-content-between align-items-center" role="banner">
+        <img src="../public/assets/img/SB-blue.png" alt="" id="siteLogo">
 
-    <nav aria-label="Navigation principale">
-        <a href="#tarifs">Tarifs</a>
-        <a href="#parcours">Parcours</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <nav aria-label="Navigation principale">
+            <a href="#tarifs">Tarifs</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <div class="theme-switcher" role="group" aria-label="Choix de la couleur principale">
-        <button class="color-btn" data-theme="blue" style="background:#40adb7" aria-label="Choisir la couleur bleu"></button>
-        <button class="color-btn" data-theme="green" style="background:#c4f454" aria-label="Choisir la couleur vert"></button>
-        <button class="color-btn" data-theme="purple" style="background:#7651c5" aria-label="Choisir la couleur violet"></button>
-        <button class="color-btn" data-theme="pink" style="background:#fa167d" aria-label="Choisir la couleur rose"></button>
+    <div class="theme-controls">
+        <!-- DARK MODE -->
+        <button
+            id="themeToggle"
+            class="btn btn-moon"
+            aria-label="Changer le thème"
+            aria-pressed="false">
+            <i class="bi bi-moon-fill"></i>
+        </button>
+
+        <!-- THEME PICKER -->
+        <div class="theme-picker">
+
+            <!-- Couleur actuelle -->
+            <button
+                id="themePickerToggle"
+                class="color-current"
+                aria-label="Choisir une couleur de thème"
+                aria-expanded="false">
+                <i class="bi bi-droplet-fill"></i>
+            </button>
+
+            <!-- Couleurs disponibles -->
+            <div class="theme-options">
+                <button
+                    class="color-btn"
+                    data-theme="blue"
+                    data-color="#40adb7"
+                    aria-label="Choisir la couleur bleue">
+                </button>
+
+                <button
+                    class="color-btn"
+                    data-theme="green"
+                    data-color="#c4f454"
+                    aria-label="Choisir la couleur verte">
+                </button>
+
+                <button
+                    class="color-btn"
+                    data-theme="purple"
+                    data-color="#7651c5"
+                    aria-label="Choisir la couleur violette">
+                </button>
+
+                <button
+                    class="color-btn"
+                    data-theme="pink"
+                    data-color="#fa167d"
+                    aria-label="Choisir la couleur rose">
+                </button>
+            </div>
+        </div>
     </div>
+        
+    </header>
 
-    <button id="themeToggle" class="btn btn-light" aria-label="Changer le thème" aria-pressed="false"> 🌙 </button>
-</header>
+    <main id="main-content" role="main">
+        <?= $content ?>
+    </main>
+    
+    <footer>
+        <nav aria-label="Navigation secondaire">
+            <a href="#CGU">CGU</a>
+            <a href="https://www.linkedin.com/in/sonia-bougamha/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/SoniaB78" aria-label="Github"><i class="bi bi-github"></i></a>
+        </nav>
+        <p>© Sonia B. 2026</p>
+    </footer>
 
-<main id="main-content" role="main">
-    <?= $content ?>
-</main>
- 
-<footer>
-    <p>© Sonia B. 2026</p>
-    <nav aria-label="Navigation secondaire">
-        <a href="#CGU">CGU</a>
-        <a href="#LinkedIn">LinkedIn</a>
-        <a href="#Github">Github</a>
-    </nav>
-</footer>
-
-<script src="../public/assets/js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../public/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

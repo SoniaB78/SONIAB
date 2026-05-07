@@ -178,8 +178,6 @@ This project aims to demonstrate:
 - [x] Persist user theme preference (localStorage)
 - [ ] Improve hero section (visual impact)
 - [ ] Design timeline (parcours)
-- [ ] Add modern UI (cards, shadows, spacing)
-- [ ] Add color theme system (user selectable)
 
 ---
 

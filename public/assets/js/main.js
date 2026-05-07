@@ -1,85 +1,180 @@
-// ========================== INITIALISATION
+// ================================================== INITIALISATION ==================================================
 
-
-// On attend que le DOM soit chargé
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ========================== ELEMENTS DOM
-    const toggleBtn = document.getElementById('themeToggle');
+    // ================================================== ELEMENTS DOM ==================================================
+
+    const body = document.body;
+
+    // Theme picker
+    const themePicker = document.querySelector('.theme-picker');
+    const themePickerToggle = document.getElementById('themePickerToggle');
     const colorButtons = document.querySelectorAll('.color-btn');
+
+    // Dark mode
+    const darkModeToggle = document.getElementById('themeToggle');
+
+    // Logo
     const logo = document.getElementById('siteLogo');
 
-    // ========================== CONSTANTES
+    // ================================================== CONSTANTES ==================================================
+
     const THEMES = ['blue', 'green', 'purple', 'pink'];
 
-    // ========================== FONCTION : UPDATE LOGO
+    // ================================================== FONCTION : METTRE À JOUR LE LOGO ==================================================
+
     function updateLogo(theme) {
+
+        // Sécurité : vérifier que le logo existe
         if (!logo) return;
 
-        // ⚠️ Chemin absolu (important avec ton routing)
+        // Mise à jour du logo
         logo.src = `../public/assets/img/SB-${theme}.png`;
     }
 
-    // ========================== DARK MODE INIT
-    const savedDarkMode = localStorage.getItem('theme');
+    // ================================================== FONCTION : METTRE À JOUR LA PASTILLE ACTIVE ==================================================
 
-    if (savedDarkMode === 'dark') {
-        document.body.classList.add('dark');
-        if (toggleBtn) toggleBtn.setAttribute('aria-pressed', 'true');
+    function updateCurrentColor(color) {
+
+        // Sécurité
+        if (!themePickerToggle) return;
+
+        // Changer la couleur de la pastille principale
+        themePickerToggle.style.background = color;
     }
 
-    // ========================== DARK MODE CLICK
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
+    // ================================================== FONCTION : APPLIQUER UN THÈME ==================================================
 
-            const isDark = document.body.classList.toggle('dark');
+    function applyTheme(theme, color = null) {
+
+        // Supprimer anciens thèmes
+        THEMES.forEach(t => {
+            body.classList.remove(`theme-${t}`);
+        });
+
+        // Ajouter nouveau thème
+        body.classList.add(`theme-${theme}`);
+
+        // Sauvegarder
+        localStorage.setItem('color-theme', theme);
+
+        // Mettre à jour logo
+        updateLogo(theme);
+
+        // Mettre à jour la pastille
+        if (color) {
+            updateCurrentColor(color);
+        }
+    }
+
+    // ================================================== INITIALISATION DARK MODE ==================================================
+
+    const savedDarkMode = localStorage.getItem('theme');
+
+    // Si dark mode sauvegardé
+    if (savedDarkMode === 'dark') {
+
+        body.classList.add('dark');
+
+        // Accessibilité
+        if (darkModeToggle) {
+            darkModeToggle.setAttribute('aria-pressed', 'true');
+        }
+    }
+
+    // ================================================== CLICK DARK MODE ================================================== 
+
+    if (darkModeToggle) {
+
+        darkModeToggle.addEventListener('click', () => {
+
+            // Toggle classe dark
+            const isDark = body.classList.toggle('dark');
 
             // Accessibilité
-            toggleBtn.setAttribute('aria-pressed', isDark);
+            darkModeToggle.setAttribute('aria-pressed', isDark);
 
-            // Sauvegarde
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            // Sauvegarde utilisateur
+            localStorage.setItem(
+                'theme',
+                isDark ? 'dark' : 'light'
+            );
         });
     }
 
-    // ========================== COLOR THEME INIT
+    // ================================================== INITIALISATION THÈME COULEUR ==================================================
+
     let savedColorTheme = localStorage.getItem('color-theme');
 
-    // Si aucun thème sauvegardé → défaut = blue
+    // Thème par défaut
     if (!savedColorTheme) {
         savedColorTheme = 'blue';
     }
 
-    // Appliquer le thème
-    document.body.classList.add(`theme-${savedColorTheme}`);
-    updateLogo(savedColorTheme);
+    // Chercher le bouton correspondant
+    const activeButton = document.querySelector(
+        `.color-btn[data-theme="${savedColorTheme}"]`
+    );
 
-    // ========================== COLOR THEME CLICK
+    // Récupérer sa couleur
+    const activeColor = activeButton
+        ? activeButton.dataset.color
+        : '#40adb7';
+
+    // Appliquer thème initial
+    applyTheme(savedColorTheme, activeColor);
+
+    // ================================================== OUVERTURE / FERMETURE PICKER ==================================================
+    if (themePicker && themePickerToggle) {
+
+        themePickerToggle.addEventListener('click', () => {
+
+            // Toggle ouverture
+            themePicker.classList.toggle('open');
+
+            // Etat ouvert ?
+            const isOpen = themePicker.classList.contains('open');
+
+            // Accessibilité
+            themePickerToggle.setAttribute(
+                'aria-expanded',
+                isOpen
+            );
+        });
+    }
+
+    // ==================================================  CLICK SUR UNE COULEUR ==================================================
+
     colorButtons.forEach(btn => {
 
         btn.addEventListener('click', () => {
 
+            // Récupération données bouton
             const theme = btn.dataset.theme;
+            const color = btn.dataset.color;
 
-            // Supprimer anciens thèmes
-            THEMES.forEach(t => {
-                document.body.classList.remove(`theme-${t}`);
+            // Appliquer thème
+            applyTheme(theme, color);
+
+            // Accessibilité
+            colorButtons.forEach(button => {
+                button.setAttribute('aria-pressed', 'false');
             });
 
-            // Ajouter nouveau thème
-            document.body.classList.add(`theme-${theme}`);
-
-            // Sauvegarder
-            localStorage.setItem('color-theme', theme);
-
-            // Update logo
-            updateLogo(theme);
-
-            // Accessibilité (aria-pressed)
-            colorButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
             btn.setAttribute('aria-pressed', 'true');
-        });
 
+            // Fermer le picker après choix
+            if (themePicker) {
+                themePicker.classList.remove('open');
+            }
+
+            if (themePickerToggle) {
+                themePickerToggle.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+            }
+        });
     });
 
 });

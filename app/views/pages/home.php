@@ -2,6 +2,8 @@
     <div class="container text-center">
         <h1 id="hero-title">Développeuse Web</h1>
         <p>Création - Intégration - UX/UI</p>
+        <hr>
+        <p>Constuisons ensemble votre site idéal !</p>
         <a href="#contact" class="btn btn-primary mt-3">Me contacter</a>
     </div>
 </section>
@@ -119,7 +121,7 @@
             <label for="message" class="mt-3">Message</label>
             <textarea id="message" class="form-control" required></textarea>
 
-            <button type="submit" class="btn btn-success mt-3">
+            <button type="submit" class="btn btn-primary mt-3">
                 Envoyer
             </button>
 
