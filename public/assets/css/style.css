@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
 :root { 
 	/* Colors */
 	--bg-color: #ffffff;
@@ -41,7 +43,7 @@ body.theme-pink {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Inter", sans-serif;
 	background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color var(--transition), color var(--transition), border-color var(--transition);
@@ -88,6 +90,7 @@ header nav a {
     margin: 0 10px;
     text-decoration: none;
 	color: var(--text-color);
+	font-family: "Space Grotesk", sans-serif;
 }
 
 .theme-controls {
@@ -175,9 +178,13 @@ header nav a {
     background: #fa167d;
 }
 
+/* -------------- SECTIONS -------------- */
+section {
+    padding: 50px 0;
+}
 /* -------------- HERO -------------- */
 .hero {
-    height: 100vh;
+    height: 100svh;
 	background-color: inherit;
 	background-image: url('../img/bg-city-light.jpg');
 	background-position: center;
@@ -198,17 +205,70 @@ header nav a {
     mix-blend-mode: multiply;
     z-index: 0;
 }
+
 body.dark .hero::before {
     opacity: 0.75;
 }
-.hero-content {
+
+.hero > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.hero > div {
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	box-shadow: 
+		0 8px 32px rgba(0, 0, 0, 0.1),
+		inset 0 1px 0 rgba(255, 255, 255, 0.5),
+		inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+		inset 0 0 60px 30px rgba(255, 255, 255, 3);
+	position: relative;
+	overflow: hidden;
+    z-index: 2;
+	padding: 1em 3em;
+}
+
+.hero > div::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 100%;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.8),
+		transparent,
+		rgba(255, 255, 255, 0.3)
+	);
+}
+/*.hero-content {
     position: relative;
     z-index: 1;
-}
+}*/
 
 .hero .container {
     position: relative;
-    z-index: 2;
+
+}
+
+.hero h1 {
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-family: "Space Grotesk", sans-serif;
 }
 
 .hero hr {
@@ -220,17 +280,24 @@ body.dark .hero::before {
 	/*border: 1px solid var(--primary-color);*/
 }
 
+section.hero > div > div {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 20px;
+}
 a.btn-primary,
 button.btn-primary{
     background: var(--primary-color);
     border: none;
+	transition: transform .2s ease;
+	
 }
 
-/* -------------- SECTIONS -------------- */
-.section {
-    padding: 100px 0;
+a.btn-primary:hover,
+button.btn-primary:hover{
+	transform: translateY(-2px);
 }
-
 /* -------------- TABLE PRICES -------------- */
 
 /* -------------- TIMELINE PARCOURS -------------- */

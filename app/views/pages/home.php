@@ -1,56 +1,20 @@
 <section class="hero" aria-labelledby="hero-title">
-    <div class="container text-center">
+    <div class="text-center">
         <h1 id="hero-title">Développeuse Web</h1>
-        <p>Création - Intégration - UX/UI</p>
+        <p>Je conçois des interfaces modernes, accessibles et maintenables.</p>
         <hr>
         <p>Constuisons ensemble votre site idéal !</p>
-        <a href="#contact" class="btn btn-primary mt-3">Me contacter</a>
+        <div>
+            <a href="#contact" class="btn btn-primary mt-3">Me contacter</a>
+            <a href="#parcours" class="btn btn-primary mt-3">Voir mon parcours</a>
+        </div>
     </div>
 </section>
 
-<section id="tarifs" class="section">
+<section id="services" aria-labelledby="services-title">
     <div class="container">
-        <h2 class="text-center">Tarifs</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+        <h2 class="text-center">Services</h2>
+        <p>Je propose des services de développement web complets pour répondre à vos besoins.</p>
     </div>
 </section>
 
@@ -97,6 +61,52 @@
             <?php endforeach; ?>
 
         </div>
+    </div>
+</section>
+
+<section id="tarifs" class="section">
+    <div class="container">
+        <h2 class="text-center">Tarifs</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </section>
 
