@@ -6,7 +6,7 @@
         <p>Constuisons ensemble votre site idéal !</p>
         <div>
             <a href="#contact" class="btn btn-primary mt-3">Me contacter</a>
-            <a href="#parcours" class="btn btn-primary mt-3">Voir mon parcours</a>
+            <a href="#parcours" class="btn btn-secondary mt-3">Voir mon parcours</a>
         </div>
     </div>
 </section>

@@ -9,6 +9,7 @@
 	/* Surfaces */
 	--header-bg: rgba(255, 255, 255, 0.9);
 	--overlay-color: rgba(64, 173, 183, 0.45);
+	--surface-glass: rgba(255,255,255,.08);
 
 	/* UI */
 	--border-radius: 10px;
@@ -19,25 +20,30 @@ body.dark {
     --bg-color: #1a102e;
     --text-color: #ffffff;
     --header-bg: #1a102e;
+	--surface-glass: rgba(20,20,20,.35);
 }
 
 body.theme-blue {
     --primary-color: #40adb7;
+	--secondary-color: #21818a;
     --overlay-color: rgba(64, 173, 183, 0.45);
 }
 
 body.theme-green {
     --primary-color: #c4f454;
+	--secondary-color: #94c12b;
 	--overlay-color: rgba(196, 244, 84, 0.35);
 }
 
 body.theme-purple {
     --primary-color: #7651c5;
+	--secondary-color: #5836a2;
 	--overlay-color: rgba(118, 81, 197, 0.45);
 }
 
 body.theme-pink {
     --primary-color: #fa167d;
+	--secondary-color: #ca005b;
 	--overlay-color: rgba(250, 22, 125, 0.40);
 }
 
@@ -197,7 +203,6 @@ section {
 }
 
 .hero::before {
-
     content: "";
     position: absolute;
     inset: 0;
@@ -227,7 +232,7 @@ body.dark .hero::before {
 
 .hero > div {
 	background: rgba(255, 255, 255, 0.05);
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(5px);
 	border-radius: 20px;
 	border: 1px solid rgba(255, 255, 255, 0.3);
@@ -235,7 +240,7 @@ body.dark .hero::before {
 		0 8px 32px rgba(0, 0, 0, 0.1),
 		inset 0 1px 0 rgba(255, 255, 255, 0.5),
 		inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-		inset 0 0 60px 30px rgba(255, 255, 255, 3);
+		inset 0 0 80px rgba(255, 255, 255, 0.3);
 	position: relative;
 	overflow: hidden;
     z-index: 2;
@@ -297,6 +302,21 @@ button.btn-primary{
 a.btn-primary:hover,
 button.btn-primary:hover{
 	transform: translateY(-2px);
+	background: var(--primary-color);
+}
+
+a.btn-secondary,
+button.btn-secondary{
+    background: var(--secondary-color);
+    border: none;
+	transition: transform .2s ease;
+	
+}
+
+a.btn-secondary:hover,
+button.btn-secondary:hover{
+	transform: translateY(-2px);
+	background: var(--secondary-color);
 }
 /* -------------- TABLE PRICES -------------- */
 
@@ -312,7 +332,7 @@ button.btn-primary:hover{
 	content: '';
 	position: absolute;
 	height: 100%;
-	border: 1px solid var(--primary-color);
+	border: 1px solid var(--secondary-color);
 	right: 40px;
 	top: 0;
 }
@@ -335,8 +355,8 @@ button.btn-primary:hover{
 	
 .timeline__item {
 	padding: 1rem;
-	border: 2px solid var(--primary-color);
-	border-image: linear-gradient(to right, var(--primary-color) 10%, var(--primary-color) 100%);
+	border: 2px solid var(--secondary-color);
+	border-image: linear-gradient(to right, var(--primary-color) 10%, var(--secondary-color) 100%);
 	border-image-slice: 1;
 	position: relative;
 	margin: 1rem 3rem 1rem 1rem;
@@ -352,7 +372,7 @@ button.btn-primary:hover{
 	right: -10px;
 	top: calc(50% - 5px);
 	border-style: solid;
-	border-color: var(--primary-color) var(--primary-color) transparent transparent;
+	border-color: var(--primary-color) var(--secondary-color) transparent transparent;
 	border-width: 10px;
 	transform: rotate(45deg);
 }
@@ -365,13 +385,13 @@ button.btn-primary:hover{
 	.timeline__item:nth-of-type(2n) {
 		float: right;
 		margin: 1rem;
-		border-image: linear-gradient(to right, var(--primary-color) 0%, var(--primary-color) 100%);
+		border-image: linear-gradient(to right, var(--secondary-color) 0%, var(--primary-color) 100%);
 		border-image-slice: 1;
 	}
 	.timeline__item:nth-of-type(2n):before {
 		right: auto;
 		left: -10px;
-		border-color: transparent transparent #3cbab4 #a3faf6;
+		border-color: transparent transparent var(--secondary-color) var(--primary-color);
 	}
 }
 	
@@ -381,14 +401,14 @@ button.btn-primary:hover{
 	margin: 0 48px 0 auto;
 	font-size: 1.8rem;
 	background-color: var(--bg-color);
-	color: var(--primary-color);
+	color: var(--secondary-color);
 	line-height: 1;
 	border-image: none;
 	padding: 0.6rem 1rem 0.6rem 1rem;
 }
 
 .timeline__item--year:hover {
-	color: #a3faf6;
+	color: var(--primary-color);
 	transition-duration: var(--transition);
 }
 
