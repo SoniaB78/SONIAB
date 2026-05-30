@@ -7,7 +7,6 @@
 	--primary-color: #40adb7; /* bleu par défaut*/
 
 	/* Surfaces */
-	--header-bg: rgba(255, 255, 255, 0.9);
 	--overlay-color: rgba(64, 173, 183, 0.45);
 	--surface-glass: rgba(255,255,255,.08);
 
@@ -19,7 +18,6 @@
 body.dark {
     --bg-color: #1a102e;
     --text-color: #ffffff;
-    --header-bg: #1a102e;
 	--surface-glass: rgba(20,20,20,.35);
 }
 
@@ -71,7 +69,7 @@ body {
 
 /* -------------- HEADER -------------- */
 header {
-    background: var(--header-bg);
+    background: var(--bg-color);
     backdrop-filter: blur(10px);
     transition: var(--transition);
 	position: fixed;
@@ -102,7 +100,7 @@ header nav a {
 .theme-controls {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 0.75rem;
 }
 
 .btn-moon ,
@@ -111,6 +109,7 @@ header nav a {
 	justify-content: center;
 	align-items: center;
 	color: var(--text-color);
+	font-size: 12px;
 }
 
 /* Container */
@@ -123,8 +122,8 @@ header nav a {
 .btn-moon,
 .color-current,
 .color-btn {
-    width: 22px;
-    height: 22px;
+    width: 1.25rem;
+    height: 1.25rem;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -140,31 +139,44 @@ header nav a {
 /* Options cachées */
 .theme-options {
     position: absolute;
-    top: 0;
-    left: 0;
+    right: -6px;
+    top: -3px;
     display: flex;
-    gap: 6px;
-    opacity: 0;
+    gap: 0.75rem;
+	border-radius: 999px;
+	background: var(--bg-color);
+	border: 4px solid var(--bg-color);
+    box-shadow: 0px 5px 15px var(--overlay-color);
     pointer-events: none;
-    transform: translateX(0);
-    transition: 0.3s ease;
+	z-index: -2;
+    opacity: 0;
+	visibility: hidden;
+    transform: translateX(500px);
+    transition: 
+		opacity .3s ease,
+        transform .3s ease,
+        visibility .3s;
 }
 
 /* Ouvert */
 .theme-picker.open .theme-options {
     opacity: 1;
+	visibility: visible;
+	z-index: 100;
     pointer-events: auto;
-    transform: translateX(-22px);
+    transform: translateX(-3px);
 }
 
 /* Animation boutons */
 .color-btn {
-    transform: scale(0.5);
-    transition: 0.3s ease;
+	flex-shrink: 0;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
-.theme-picker.open .color-btn {
-    transform: scale(1);
+.theme-picker.open .color-btn:hover {
+    transform: scale(1.15);
 }
 
 /* Couleurs */
@@ -188,6 +200,7 @@ header nav a {
 section {
     padding: 50px 0;
 }
+
 /* -------------- HERO -------------- */
 .hero {
     height: 100svh;
@@ -244,7 +257,7 @@ body.dark .hero::before {
 	position: relative;
 	overflow: hidden;
     z-index: 2;
-	padding: 1em 3em;
+	padding: 3em;
 }
 
 .hero > div::after {
@@ -277,26 +290,26 @@ body.dark .hero::before {
 }
 
 .hero hr {
-	margin: 15px auto;
-	width: 50%;
+	margin: 20px auto;
+	opacity: 1;
+	width: 60%;
 	border: 0;
-    height: 1px;
+    height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--primary-color), rgba(0, 0, 0, 0));
-	/*border: 1px solid var(--primary-color);*/
 }
 
 section.hero > div > div {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	gap: 20px;
 }
+
 a.btn-primary,
 button.btn-primary{
     background: var(--primary-color);
     border: none;
 	transition: transform .2s ease;
-	
 }
 
 a.btn-primary:hover,
@@ -310,7 +323,6 @@ button.btn-secondary{
     background: var(--secondary-color);
     border: none;
 	transition: transform .2s ease;
-	
 }
 
 a.btn-secondary:hover,
@@ -318,6 +330,7 @@ button.btn-secondary:hover{
 	transform: translateY(-2px);
 	background: var(--secondary-color);
 }
+
 /* -------------- TABLE PRICES -------------- */
 
 /* -------------- TIMELINE PARCOURS -------------- */
