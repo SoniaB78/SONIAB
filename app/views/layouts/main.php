@@ -40,9 +40,9 @@
         <img src="../public/assets/img/SB-blue.png" alt="" id="siteLogo">
 
         <nav aria-label="Navigation principale">
+            <a href="#tarifs">Tarifs</a>
             <a href="#services">Services</a>
             <a href="#parcours">Parcours</a>
-            <a href="#tarifs">Tarifs</a>
             <a href="#contact">Contact</a>
         </nav>
 

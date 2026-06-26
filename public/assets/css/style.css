@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@keyframes shake-vertical-normal {0%, 100% { transform: translateY(0); } 10%, 30%, 50%, 70% { transform: translateY(-8px); } 20%, 40%, 60% { transform: translateY(8px); } 80% { transform: translateY(6.4px); } 90% { transform: translateY(-6.4px);} }
 
 :root { 
 	/* Colors */
@@ -55,7 +56,7 @@ body {
 /* -------------- ACCESSIBILIY -------------- */
 .skip-link {
     position: absolute;
-    top: -45px;
+    top: -60px;
     left: 10px;
     background: var(--bg-color);
     color: var(--text-color);
@@ -72,7 +73,7 @@ header {
     background: var(--bg-color);
     backdrop-filter: blur(10px);
     transition: var(--transition);
-	position: fixed;
+	position: absolute;
     width: 100%;
 	height: 80px;
     top: 0;
@@ -103,25 +104,25 @@ header nav a {
     gap: 0.75rem;
 }
 
-.btn-moon ,
-.color-current {
+.theme-controls .btn-moon ,
+.theme-controls .color-current {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: var(--text-color);
+	color: var(--bg-color);
 	font-size: 12px;
 }
 
 /* Container */
-.theme-picker {
+.theme-controls .theme-picker {
 	position: relative;
     display: flex;
 }
 
 /* Bouton couleur active */
-.btn-moon,
-.color-current,
-.color-btn {
+.theme-controls .btn-moon,
+.theme-controls .color-current,
+.theme-controls .color-btn {
     width: 1.25rem;
     height: 1.25rem;
     border-radius: 50%;
@@ -131,13 +132,13 @@ header nav a {
 }
 
 /* Couleur active */
-.color-current {
+.theme-controls .theme-picker .color-current {
     background: var(--primary-color);
     transition: 0.3s ease;
 }
 
 /* Options cachées */
-.theme-options {
+.theme-controls .theme-options {
     position: absolute;
     right: -6px;
     top: -3px;
@@ -159,7 +160,7 @@ header nav a {
 }
 
 /* Ouvert */
-.theme-picker.open .theme-options {
+.theme-controls .theme-picker.open .theme-options {
     opacity: 1;
 	visibility: visible;
 	z-index: 100;
@@ -168,19 +169,19 @@ header nav a {
 }
 
 /* Animation boutons */
-.color-btn {
+.theme-controls .color-btn {
 	flex-shrink: 0;
     transition:
         transform .3s ease,
         box-shadow .3s ease;
 }
 
-.theme-picker.open .color-btn:hover {
+.theme-controls .theme-picker.open .color-btn:hover {
     transform: scale(1.15);
 }
 
 /* Couleurs */
-.color-btn[data-theme="blue"] {
+.theme-controls .color-btn[data-theme="blue"] {
     background: #40adb7;
 }
 
@@ -329,6 +330,15 @@ a.btn-secondary:hover,
 button.btn-secondary:hover{
 	transform: translateY(-2px);
 	background: var(--secondary-color);
+}
+
+.hero a i.bi-caret-down {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	font-size: 2rem;
+	color: var(--primary-color);
+	animation: shake-vertical-normal 1.5s ease 2s normal none;
 }
 
 /* -------------- TABLE PRICES -------------- */

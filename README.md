@@ -146,6 +146,7 @@ This project aims to demonstrate:
 - [ ] Add project portfolio module (dynamic) (optional)
 - [ ] Add contact form (backend handling)
 - [ ] Add basic admin editing via code
+- [ ] Add CGU page
 
 ---
 
@@ -177,7 +178,7 @@ This project aims to demonstrate:
 - [x] Add user-selectable color theme system
 - [x] Persist user theme preference (localStorage)
 - [ ] Improve hero section (visual impact)
-- [ ] Design timeline (parcours)
+- [ ] Re-Design timeline (parcours)
 
 ---
 

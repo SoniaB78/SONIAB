@@ -9,6 +9,56 @@
             <a href="#parcours" class="btn btn-secondary mt-3">Voir mon parcours</a>
         </div>
     </div>
+
+    <a href="#tarifs" title="Aller aux tarifs">
+        <i class="bi bi-caret-down"></i>
+    </a>
+</section>
+
+<section id="tarifs" class="section">
+    <div class="container">
+        <h2 class="text-center">Tarifs</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <section id="services" aria-labelledby="services-title">
@@ -61,52 +111,6 @@
             <?php endforeach; ?>
 
         </div>
-    </div>
-</section>
-
-<section id="tarifs" class="section">
-    <div class="container">
-        <h2 class="text-center">Tarifs</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 </section>
 
