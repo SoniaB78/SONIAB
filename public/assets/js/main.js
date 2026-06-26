@@ -1,5 +1,4 @@
 // ================================================== INITIALISATION ==================================================
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // ================================================== ELEMENTS DOM ==================================================
@@ -177,4 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ==================================================  TOOLTIPS AVEC BOOTSTRAP ==================================================
+
+    
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+
+    [...popoverTriggerList].forEach(el => {
+        new bootstrap.Popover(el);
+    });
+    
+
+    // ==================================================   ==================================================
+
+    
+
+    
 });

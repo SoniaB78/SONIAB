@@ -41,7 +41,6 @@
 
         <nav aria-label="Navigation principale">
             <a href="#tarifs">Tarifs</a>
-            <a href="#services">Services</a>
             <a href="#parcours">Parcours</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -50,7 +49,7 @@
         <!-- DARK MODE -->
         <button
             id="themeToggle"
-            class="btn btn-moon"
+            class="btn-moon"
             aria-label="Changer le thème"
             aria-pressed="false">
             <i class="bi bi-moon-fill"></i>
@@ -116,7 +115,7 @@
         <p>© Sonia B. 2026</p>
     </footer>
 
-    <script src="../public/assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../public/assets/js/main.js"></script>
 </body>
 </html>
