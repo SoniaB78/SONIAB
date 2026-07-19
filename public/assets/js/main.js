@@ -141,7 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
     }
+    // ================================================== FERMETURE SI CLIC À L'EXTÉRIEUR ==================================================
 
+    document.addEventListener('click', (event) => {
+
+        // Si le clic est en dehors du picker
+        if (!themePicker.contains(event.target)) {
+
+            themePicker.classList.remove('open');
+
+            themePickerToggle.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+        }
+
+    });
     // ==================================================  CLICK SUR UNE COULEUR ==================================================
 
     colorButtons.forEach(btn => {
